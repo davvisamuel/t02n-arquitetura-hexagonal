@@ -3,7 +3,6 @@ package com.fag.lucasmartins.arquitetura_software.application.ports.out.persiste
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.ProdutoBO;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface ProdutoRepositoryPort {
 

@@ -1,11 +1,11 @@
 package com.fag.lucasmartins.arquitetura_software.application.ports.in.service;
 
-import com.fag.lucasmartins.arquitetura_software.core.domain.commands.AdicionarEstoqueCommand;
-import com.fag.lucasmartins.arquitetura_software.core.domain.commands.DiminuirEstoqueCommand;
+import com.fag.lucasmartins.arquitetura_software.core.domain.bo.AdicionarEstoqueBO;
+import com.fag.lucasmartins.arquitetura_software.core.domain.bo.DiminuirEstoqueBO;
 
 public interface EstoqueServicePort {
 
-    void adicinarEstoque(AdicionarEstoqueCommand command);
+    void adicinarEstoque(AdicionarEstoqueBO command);
 
-    void diminuirEstoque(DiminuirEstoqueCommand command);
+    void diminuirEstoque(DiminuirEstoqueBO command);
 }

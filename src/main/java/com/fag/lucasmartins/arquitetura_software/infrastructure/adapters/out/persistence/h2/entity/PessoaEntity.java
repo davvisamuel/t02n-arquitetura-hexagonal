@@ -1,18 +1,14 @@
 package com.fag.lucasmartins.arquitetura_software.infrastructure.adapters.out.persistence.h2.entity;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.UUID;
 
 @Entity
 @Table(name = "tb_pessoa")
 public class PessoaEntity {
 
     @Id
-    @Type(type = "uuid-char")
     private Integer id;
 
     private String nomeCompleto;
@@ -74,5 +70,13 @@ public class PessoaEntity {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public List<PedidoEntity> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<PedidoEntity> pedidos) {
+        this.pedidos = pedidos;
     }
 }

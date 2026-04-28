@@ -2,9 +2,9 @@ package com.fag.lucasmartins.arquitetura_software.application.services;
 
 import com.fag.lucasmartins.arquitetura_software.application.ports.in.service.EstoqueServicePort;
 import com.fag.lucasmartins.arquitetura_software.application.ports.out.persistence.ProdutoRepositoryPort;
+import com.fag.lucasmartins.arquitetura_software.core.domain.bo.AdicionarEstoqueBO;
+import com.fag.lucasmartins.arquitetura_software.core.domain.bo.DiminuirEstoqueBO;
 import com.fag.lucasmartins.arquitetura_software.core.domain.bo.ProdutoBO;
-import com.fag.lucasmartins.arquitetura_software.core.domain.commands.AdicionarEstoqueCommand;
-import com.fag.lucasmartins.arquitetura_software.core.domain.commands.DiminuirEstoqueCommand;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -17,19 +17,19 @@ public class EstoqueService implements EstoqueServicePort {
     }
 
     @Override
-    public void adicinarEstoque(AdicionarEstoqueCommand command) {
-        final ProdutoBO produtoBO = produtoRepositoryPort.encontrarPorId(command.getProdutoId());
+    public void adicinarEstoque(AdicionarEstoqueBO bo) {
+        final ProdutoBO produtoBO = produtoRepositoryPort.encontrarPorId(bo.getProdutoId());
 
-        produtoBO.adicionarEstoque(command.getQuantidade());
+        produtoBO.adicionarEstoque(bo.getQuantidade());
 
         produtoRepositoryPort.salvar(produtoBO);
     }
 
     @Override
-    public void diminuirEstoque(DiminuirEstoqueCommand command) {
-        final ProdutoBO produtoBO = produtoRepositoryPort.encontrarPorId(command.getProdutoId());
+    public void diminuirEstoque(DiminuirEstoqueBO bo) {
+        final ProdutoBO produtoBO = produtoRepositoryPort.encontrarPorId(bo.getProdutoId());
 
-        produtoBO.diminuirEstoque(command.getQuantidade());
+        produtoBO.diminuirEstoque(bo.getQuantidade());
 
         produtoRepositoryPort.salvar(produtoBO);
     }

@@ -1,12 +1,12 @@
-package com.fag.lucasmartins.arquitetura_software.core.domain.commands;
+package com.fag.lucasmartins.arquitetura_software.core.domain.bo;
 
-public class DiminuirEstoqueCommand {
+public class DiminuirEstoqueBO {
 
     private Integer produtoId;
 
     private Integer quantidade;
 
-    public DiminuirEstoqueCommand(Integer produtoId, Integer quantidade) {
+    public DiminuirEstoqueBO(Integer produtoId, Integer quantidade) {
         this.produtoId = produtoId;
         this.quantidade = quantidade;
     }

@@ -1,12 +1,12 @@
-package com.fag.lucasmartins.arquitetura_software.core.domain.commands;
+package com.fag.lucasmartins.arquitetura_software.core.domain.bo;
 
-public class AdicionarEstoqueCommand {
+public class AdicionarEstoqueBO {
 
     private Integer produtoId;
 
     private Integer quantidade;
 
-    public AdicionarEstoqueCommand(Integer produtoId, Integer quantidade) {
+    public AdicionarEstoqueBO(Integer produtoId, Integer quantidade) {
         this.produtoId = produtoId;
         this.quantidade = quantidade;
     }
